@@ -1,0 +1,29 @@
+<section>
+    <div class="characters">
+        <div class="contenedor">
+            <div class="mensaje">
+                <p class="no-resultados">No se encontraron resultados</p>
+            </div>
+            <div class="list-characters" *ngFor="let personaje of personajes | filtro:page">
+                <div class="item-charcters">
+                    <h3>{{personaje.id}}</h3>
+                    <h3>{{personaje.name}}</h3>
+                    <img [src]="[personaje.thumbnail.path+ '.' +personaje.thumbnail.extension]" alt="">
+                </div>
+            </div>
+            <div class="paginador">
+                <button (click)="anterior()"><</button>
+                <button>1</button>
+                <button>2</button>
+                <button>3</button>
+                <button>4</button>
+                <button>5</button>
+                <button>6</button>
+                <button>7</button>
+                <button>8</button>
+                <button>9</button>
+                <button (click)="siguiente()">></button>
+            </div>
+        </div>
+    </div>
+</section>
