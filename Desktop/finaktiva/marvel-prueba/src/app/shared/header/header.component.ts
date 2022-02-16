@@ -1,4 +1,4 @@
-import { Component} from '@angular/core';
+import { Component, Output, EventEmitter} from '@angular/core';
 
 @Component({
   selector: 'app-header',
@@ -10,10 +10,12 @@ export class HeaderComponent {
 
   palabra: string = '';
 
+  @Output() palabraBuscar: EventEmitter<string> = new EventEmitter();
+
   constructor() { }
 
   buscar(){
-    console.log(this.palabra)
+    this.palabraBuscar.emit( this.palabra )
   }
 
 }

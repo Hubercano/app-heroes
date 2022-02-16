@@ -6,9 +6,16 @@ import { Personaje } from '../interfaces/personaje.interface';
 })
 export class FiltroPipe implements PipeTransform {
 
-  transform(personajes: Personaje[], page: number = 2): Personaje[] {
-    
-    return personajes.slice(page * 10 ,page * 10 + 10)
+  transform(personajes: Personaje[], page: number = 0, palabra: string = ''): Personaje[] {
+    console.log(palabra)
+
+    if(palabra.length === 0){
+      return personajes.slice(page * 10 ,page * 10 + 10)
+    }
+
+    const filtrarPersonajes = personajes.filter(persona => persona.name.includes(palabra));
+
+    return filtrarPersonajes.slice(page * 10 ,page * 10 + 10)
   }
 
 }

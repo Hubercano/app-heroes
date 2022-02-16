@@ -1,10 +1,11 @@
 <section>
     <div class="characters">
         <div class="contenedor">
+            <div>{{palabra}}</div>
             <div class="mensaje">
                 <p class="no-resultados">No se encontraron resultados</p>
             </div>
-            <div class="list-characters" *ngFor="let personaje of personajes | filtro:page">
+            <div class="list-characters" *ngFor="let personaje of personajes | filtro:page:palabra">
                 <div class="item-charcters">
                     <h3>{{personaje.id}}</h3>
                     <h3>{{personaje.name}}</h3>

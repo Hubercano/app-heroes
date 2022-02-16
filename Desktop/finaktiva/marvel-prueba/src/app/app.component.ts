@@ -7,11 +7,13 @@ import { Component, Input } from '@angular/core';
 })
 export class AppComponent {
 
-  @Input() palabra: string = '';
+  
+ palabra: string = '';
   
   title = 'marvel-prueba';
 
-  buscar(){
-    console.log(this.palabra)
+  recibirmensaje(mensaje: string){
+    this.palabra = mensaje
   }
+  
 }

@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
+import { environment } from '../../../environments/environment';
 
 @Injectable({
   providedIn: 'root'
@@ -19,7 +20,7 @@ export class MarvelService {
     url: https://gateway.marvel.com:443/v1/public/characters?ts=1&apikey=106237f1c3d1dc3596fcf068c2829129&hash=f06ee039bfb0e523d95a17757facf150
   */
 
-  private apiUrl: string = 'https://gateway.marvel.com:443/v1/public/characters?limit=90&ts=1&apikey=106237f1c3d1dc3596fcf068c2829129&hash=f06ee039bfb0e523d95a17757facf150'
+  private apiUrl: string = `https://gateway.marvel.com:443/v1/public/characters?limit=90&ts=1&apikey=${ environment.apiKey }`
 
   constructor( 
     private http: HttpClient 
