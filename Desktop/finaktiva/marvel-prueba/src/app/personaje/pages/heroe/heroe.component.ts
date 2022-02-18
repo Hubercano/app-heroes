@@ -1,6 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Personaje } from '../../interfaces/personaje.interface';
 import { MarvelService } from '../../services/marvel.service';
+import { ModalService } from '../../services/modal.service';
 
 @Component({
   selector: 'app-heroe',
@@ -12,25 +13,35 @@ export class HeroeComponent implements OnInit {
 
   personajes: Personaje[] = [];
   page: number = 0;
+  verModal: boolean = false;
+  uri!: string;
 
-  @Input() palabra: string = 'sin nombre'
+  @Input() palabra: string = 'sin nombre';
 
   constructor( 
-    private marvelService: MarvelService 
+    private marvelService: MarvelService ,
+    private modalService: ModalService
   ) { }
 
   ngOnInit(): void {
     this.fetchPersonajes();
+    this.modalService.$modal.subscribe(valor => {
+      this.verModal = valor
+    })
   }
-
-  
 
   fetchPersonajes(){
     this.marvelService.getPersonajes()
     .subscribe( resp => {
+      console.log(resp.data.results)
       this.personajes = resp.data.results
 
     });
+  }
+
+  abrirModal(uri:string){
+    this.uri = uri;
+    this.verModal = true;
   }
 
   siguiente(){

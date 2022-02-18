@@ -1,0 +1,12 @@
+<div class="modal">
+    <div class="fondo-modal" (click)="closeModal()"></div>
+    <div class="cont-modal">
+        <div class="cerrar-modal" (click)="closeModal()">
+            <img src="./../../../../assets/btn-close.png" alt="">
+        </div>
+        <div class="info-modal">
+            <h3>{{comic?.id}}</h3>
+            {{comic?.title}}
+        </div>
+    </div>
+</div>

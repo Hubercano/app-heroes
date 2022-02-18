@@ -20,13 +20,20 @@ export class MarvelService {
     url: https://gateway.marvel.com:443/v1/public/characters?ts=1&apikey=106237f1c3d1dc3596fcf068c2829129&hash=f06ee039bfb0e523d95a17757facf150
   */
 
-  private apiUrl: string = `https://gateway.marvel.com:443/v1/public/characters?limit=90&ts=1&apikey=${ environment.apiKey }`
+  private apiUrl: string = "https://gateway.marvel.com:443/v1/public/"
 
   constructor( 
     private http: HttpClient 
   ) { }
 
   getPersonajes():Observable<any>{
-    return this.http.get(this.apiUrl)
+    const url = `${this.apiUrl}characters?limit=99&ts=1&apikey=${ environment.apiKey }`
+    return this.http.get(url)
+  }
+
+  getComic(uri: string):Observable<any> {
+    const url = `${ uri }?ts=1&apikey=${ environment.apiKey }`
+    return this.http.get(url)
+    
   }
 }
