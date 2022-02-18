@@ -6,8 +6,7 @@ import { ModalService } from '../../services/modal.service';
 @Component({
   selector: 'app-heroe',
   templateUrl: './heroe.component.html',
-  styles: [
-  ]
+  styleUrls: ['./heroe.component.scss']
 })
 export class HeroeComponent implements OnInit {
 
@@ -33,7 +32,6 @@ export class HeroeComponent implements OnInit {
   fetchPersonajes(){
     this.marvelService.getPersonajes()
     .subscribe( resp => {
-      console.log(resp.data.results)
       this.personajes = resp.data.results
 
     });

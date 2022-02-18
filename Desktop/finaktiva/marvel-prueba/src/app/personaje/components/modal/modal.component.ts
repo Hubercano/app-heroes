@@ -12,6 +12,7 @@ export class ModalComponent implements OnInit {
 
   comic!: Comic;
   @Input() uri!: string;
+  
 
   constructor(
     private modalService:  ModalService,
@@ -25,10 +26,13 @@ export class ModalComponent implements OnInit {
   fetchComic(){
     this.marvelService.getComic(this.uri)
     .subscribe( resp => {
-      console.log(resp)
       this.comic = resp.data.results[0]
-      
     });
+  }
+
+  agregarComic(){
+    this.marvelService.agregarComic(this.comic, this.comic.id)
+    console.log(this.comic)
   }
 
   closeModal(){

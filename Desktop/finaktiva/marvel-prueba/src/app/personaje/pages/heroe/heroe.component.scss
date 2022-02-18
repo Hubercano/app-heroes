@@ -1,0 +1,68 @@
+main{
+    background: #f4f4f4;
+}
+
+main .contenedor {
+    display: grid;
+    grid-template-columns: 74% 24%;
+    grid-gap: 2%;
+}
+
+.characters {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 20px;
+}
+
+.list-characters {
+    padding: 20px;
+}
+
+.item-charcters {
+    background: #fff;
+    padding: 10px
+}
+
+.cont-imagen {
+    width: 200px;
+    height: 200px;
+    border-radius: 100px;
+    overflow: hidden;
+    float: left;
+    margin: -30px 20px 0px -30px;
+}
+
+.cont-imagen img{
+    object-fit: cover;
+    height: 100%;
+    width: 100%;
+}
+
+.comics {
+    display: inline-block;
+    width: 100%;
+    overflow-y: auto;
+    height: 180px;
+}
+
+.comics ul{
+    padding:15px;
+    display:grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 10px;
+}
+
+.comics ul li{
+    font-size: 14px;
+}
+
+.item-charcters h3 {
+    margin: -20px 0 15px 0;
+    color: #444;
+}
+
+.item-charcters p{
+    font-size: 14px;
+    line-height: 20px;
+    color: #777;
+}
