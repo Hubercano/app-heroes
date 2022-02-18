@@ -31,8 +31,9 @@ export class ModalComponent implements OnInit {
   }
 
   agregarComic(){
-    this.marvelService.agregarComic(this.comic, this.comic.id)
+    this.marvelService.agregarComic(this.comic)
     console.log(this.comic)
+    this.modalService.$modal.emit(false)
   }
 
   closeModal(){

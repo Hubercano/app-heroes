@@ -3,5 +3,5 @@
             <h3>{{comicF.title}}</h3>
             <p>{{comicF.description}}</p>
             <img style="width: 100px;" [src]="[comicF.thumbnail.path+ '.' +comicF.thumbnail.extension]" alt="">
-            <div (click)="eliminar()">x</div>
+            <div (click)="eliminar(comicF)">x</div>
 </div>

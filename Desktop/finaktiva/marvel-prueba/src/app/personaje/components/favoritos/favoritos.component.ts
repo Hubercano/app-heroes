@@ -24,8 +24,8 @@ export class FavoritosComponent implements OnInit {
     return this.marvelService.getObtenerFavoritos
   }
 
-  eliminar(){
-
+  eliminar(comic : Comic){
+    this.marvelService.deleteComic(comic);
   }
 
 }

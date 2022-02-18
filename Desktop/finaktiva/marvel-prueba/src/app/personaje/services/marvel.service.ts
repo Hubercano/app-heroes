@@ -43,7 +43,7 @@ export class MarvelService {
     return [...this.favoritos]
   }
 
-  agregarComic(comic: any, id: string = ''){
+  agregarComic(comic: Comic){
     
       const itemList: any = this.favoritos.find(obj => obj.id === comic.id);
       console.log(itemList)
@@ -54,6 +54,12 @@ export class MarvelService {
         localStorage.setItem( 'localListaComics', JSON.stringify(this.favoritos))
       }
 
+  }
+
+  deleteComic(comic: Comic){
+    const elemento: any = this.favoritos.indexOf(comic)
+    console.log(elemento)
+    this.favoritos.splice(elemento, 1)
   }
 
 }
