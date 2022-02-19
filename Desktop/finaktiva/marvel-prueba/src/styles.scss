@@ -5,6 +5,7 @@
     list-style: none;
     text-decoration: none;
     font-family: sans-serif;
+    box-sizing: border-box;
 }
 
 img{
@@ -15,4 +16,29 @@ img{
     max-width: 1140px;
     width:92%;
     margin:0 auto;
+}
+
+.btn {
+    padding: 10px;
+    background: #ddd;
+    display: inline-block;
+    font-size: 12px;
+    border: none;
+    margin: 0 5px;
+    cursor:pointer;
+    transition:0.4s all ease;
+}
+
+.btn-rojo{
+    background: #ec1d24;
+    color:#fff
+}
+
+.btn-rojo:hover{
+    background: #bbb;
+    color:#444;
+}
+
+.btn:disabled {
+    background: #b3b3b3;
 }

@@ -1,0 +1,42 @@
+h2{
+    display: inline-block;
+    vertical-align: middle;
+    margin:0 0 15px  0;
+}
+
+h2 img{
+    width: 35px;
+    display: inline-block;
+    vertical-align: middle;
+    margin:0 12px 0 0;
+}
+
+.cont-favoritos{
+    margin:30px auto 0;
+    width: 80%;
+
+}
+
+.cont-favoritos > div{
+    position:relative;
+    margin: 20px 0 ;
+}
+
+.eliminar{
+    position:absolute;
+    top:-10px;
+    right: -10px;
+    width:26px;
+    cursor:pointer;
+    transition:0.2s all ease;
+    transform: scale(1.0);
+}
+
+.eliminar:hover{
+    transform: scale(1.15);
+}
+
+h4{
+    color: #555;
+    margin: 10px 0;
+}

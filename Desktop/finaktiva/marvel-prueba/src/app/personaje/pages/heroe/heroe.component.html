@@ -1,15 +1,22 @@
 <main>
     <div class="contenedor">
         <section>
+            <div class="title">
+                <img src="./../../../../assets/characters.png" alt="">
+                <h1>Characters</h1>
+            </div>
             <div class="characters">
+                <p *ngIf="(personajes | filtro:page:palabra).length == 0">no se encontraron resultados</p>
                 <div class="list-characters" *ngFor="let personaje of personajes | filtro:page:palabra">
                     <div class="item-charcters">
                         <div class="cont-imagen">
                             <img [src]="[personaje.thumbnail.path+ '.' +personaje.thumbnail.extension]" alt="">
                         </div>
                         <h3>{{personaje.name}}</h3>
-                        <p>{{personaje.description | slice:0:100}}</p>
+                        <p>{{personaje.description | slice:0:90}}</p>
+                        <div class="btn btn-rojo">View more</div>
                         <div class="comics">
+                            <h4>Related comics</h4>
                             <ul>
                                 <li *ngFor="let item of personaje.comics.items" >
                                     <p (click)="abrirModal(item.resourceURI)">{{item.name}}</p>
@@ -20,8 +27,8 @@
                     </div>
                 </div>
                 <div class="paginador">
-                    <button (click)="anterior()">< anterior</button>
-                    <button (click)="siguiente()">siguiente ></button>
+                    <button class="btn btn-rojo" (click)="anterior() ">< Anterior</button>
+                    <button class="btn btn-rojo" (click)="siguiente()" [disabled]="(personajes | filtro:page:palabra).length < 10">Siguiente ></button>
                 </div>
             </div>
         </section>

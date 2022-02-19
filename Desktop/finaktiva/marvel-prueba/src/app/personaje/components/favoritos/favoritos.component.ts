@@ -5,8 +5,7 @@ import { MarvelService } from '../../services/marvel.service';
 @Component({
   selector: 'app-favoritos',
   templateUrl: './favoritos.component.html',
-  styles: [
-  ]
+  styleUrls: ['./favoritos.component.scss']
 })
 export class FavoritosComponent implements OnInit {
 

@@ -13,7 +13,6 @@ export class FiltroPipe implements PipeTransform {
     }
 
     const filtrarPersonajes = personajes.filter(persona => persona.name.includes(palabra));
-
     return filtrarPersonajes.slice(page * 10 ,page * 10 + 10)
   }
 

@@ -5,12 +5,13 @@
             <img src="./../../../../assets/btn-close.png" alt="">
         </div>
         <div class="info-modal">
-            <h3>{{comic?.id}}</h3>
-            <h3>{{comic?.title}}</h3>
-            <p>{{comic?.description}}</p>
-            <img style="width: 100px;" [src]="[comic?.thumbnail?.path+ '.' +comic?.thumbnail?.extension]" alt="">
+            <img [src]="[comic?.thumbnail?.path+ '.' +comic?.thumbnail?.extension]" alt="">
+            <div class="text-modal">
+                <h3>{{comic?.title}}</h3>
+                <p>{{comic?.description}}</p>
+            </div>
             <div class="agregar" (click)="agregarComic()">
-                agregar a favoritos
+                Added to favourites
             </div>
         </div>
     </div>
