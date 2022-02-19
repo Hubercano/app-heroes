@@ -39,6 +39,13 @@ export class MarvelService {
     return this.http.get(url)
   }
 
+  getComicAzar(id: string):Observable<any> {
+    const url = `${this.apiUrl}comics/${id}?ts=1&apikey=${ environment.apiKey }`
+    return this.http.get(url)
+  }
+
+  /*13970 fin 2 inicio */
+
   get getObtenerFavoritos():Comic[]{
     return [...this.favoritos]
   }
@@ -46,7 +53,6 @@ export class MarvelService {
   agregarComic(comic: Comic){
     
       const itemList: any = this.favoritos.find(obj => obj.id === comic.id);
-      console.log(itemList)
       if (itemList) {
         console.log('se repite ' + comic.id)
       }else{
@@ -58,8 +64,8 @@ export class MarvelService {
 
   deleteComic(comic: Comic){
     const elemento: any = this.favoritos.indexOf(comic)
-    console.log(elemento)
     this.favoritos.splice(elemento, 1)
+    localStorage.setItem( 'localListaComics', JSON.stringify(this.favoritos))
   }
 
 }
