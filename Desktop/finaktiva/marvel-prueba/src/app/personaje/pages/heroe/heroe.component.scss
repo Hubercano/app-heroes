@@ -127,7 +127,7 @@ main .contenedor {
     margin:0 0 0px 0;
     color: #777;
     transition:0.4s all ease;
-    background:url(/assets/link-arrow.png) no-repeat -10% 50% / 15px;
+    background:url(/assets/link-arrow.png) no-repeat -20% 50% / 15px;
     padding:0 0 0 0;
     cursor:pointer;
 }
@@ -154,4 +154,40 @@ aside{
    padding: 20px;
    margin: 40px 0;
    text-align: center;
+}
+
+@media screen and(max-width:980px){
+    main .contenedor {
+        grid-template-columns: 100%;
+        grid-gap: 0;
+    }
+}
+
+@media screen and(max-width:760px){
+    .characters {
+        grid-template-columns: 100%;
+    }
+
+    .paginador {
+        grid-column: 1 / 2;
+    }
+
+    .cont-imagen {
+        float: none;
+        margin: -20px auto 20px;
+    }
+
+    .item-charcters{
+        text-align: center;
+    }
+
+    .comics ul{
+        text-align: left;
+        grid-template-columns: 1fr;
+    }
+    .comics,
+    .comics:hover{
+        overflow-y: visible;
+        height: auto;
+    }
 }

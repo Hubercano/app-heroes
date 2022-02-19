@@ -76,3 +76,20 @@
     background-color: #555;
     color: #ec1d24;
 }
+
+@media screen and(max-width:760px){
+    .info-modal img{
+        width:40%;
+        display:block;
+        margin: 0 auto 20px
+    }
+
+    .text-modal {
+        width: 100%;
+        margin: 0 0 15px 0;
+    }
+
+    .agregar{
+        background-position: 17% 50%;
+    }
+}
