@@ -1,0 +1,193 @@
+main{
+    background: #f4f4f4;
+}
+
+main .contenedor {
+    display: grid;
+    grid-template-columns: 74% 24%;
+    grid-gap: 2%;
+}
+
+.title {
+    padding:20px 0;
+}
+
+.title img {
+    width: 35px;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.title h1 {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.characters {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 12px;
+}
+
+.list-characters {
+    padding: 20px;
+}
+
+.item-charcters {
+    background: #fff;
+    padding: 10px
+}
+
+.cont-imagen {
+    width: 180px;
+    height: 180px;
+    border-radius: 100px;
+    overflow: hidden;
+    float: left;
+    margin: -30px 20px 0px -30px;
+}
+
+.cont-imagen img{
+    object-fit: cover;
+    height: 100%;
+    width: 100%;
+}
+
+.comics {
+    display: inline-block;
+    width: 100%;
+    overflow-y: hidden;
+    height: 180px;
+    padding:15px;
+    padding-right:25px;
+    margin: 15px 0 0 0;
+}
+
+.comics:hover{
+    overflow-y: auto;
+    padding:15px;
+}
+
+.comics::-webkit-scrollbar {
+    -webkit-appearance: none;
+}
+
+.comics::-webkit-scrollbar:vertical {
+    width:10px;
+}
+
+.comics::-webkit-scrollbar-button:increment,.comics::-webkit-scrollbar-button {
+    display: none;
+} 
+
+.comics::-webkit-scrollbar:horizontal {
+    height: 10px;
+}
+
+.comics::-webkit-scrollbar-thumb {
+    background-color: #ec1d24;
+    border-radius: 20px;
+    border: 2px solid #f1f2f3;
+}
+
+.comics::-webkit-scrollbar-track {
+    border-radius: 10px;  
+}
+
+.comics h4{
+    color:#555;
+    margin: 0 0 15px 0;
+}
+
+.comics ul{
+    display:grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 10px;
+}
+
+.comics ul li{
+    font-size: 14px;
+}
+
+.item-charcters h3 {
+    margin: -20px 0 15px 0;
+    color: #444;
+}
+
+.item-charcters p{
+    font-size: 12px;
+    line-height: 20px;
+    color: #777;
+    margin:0 0 15px 0;
+}
+
+.item-charcters ul li p{
+    font-size: 12px;
+    line-height: 20px;
+    margin:0 0 0px 0;
+    color: #777;
+    transition:0.4s all ease;
+    background:url(/assets/link-arrow.png) no-repeat -20% 50% / 15px;
+    padding:0 0 0 0;
+    cursor:pointer;
+}
+
+.item-charcters ul li p:hover{
+    background:url(/assets/link-arrow.png) no-repeat 0% 50% / 15px;
+    padding:0 0 0 20px;
+    color: #ec1d24;
+}
+
+.paginador {
+    grid-column: 1 / 3;
+    justify-content: center;
+    text-align: center;
+    padding: 0 0 20px 0;
+}
+
+.item-charcters .btn{
+    margin:0 0 0 0;
+}
+
+aside{
+   background: #ebebeb; 
+   padding: 20px;
+   margin: 40px 0;
+   text-align: center;
+}
+
+@media screen and(max-width:980px){
+    main .contenedor {
+        grid-template-columns: 100%;
+        grid-gap: 0;
+    }
+}
+
+@media screen and(max-width:760px){
+    .characters {
+        grid-template-columns: 100%;
+    }
+
+    .paginador {
+        grid-column: 1 / 2;
+    }
+
+    .cont-imagen {
+        float: none;
+        margin: -20px auto 20px;
+    }
+
+    .item-charcters{
+        text-align: center;
+    }
+
+    .comics ul{
+        text-align: left;
+        grid-template-columns: 1fr;
+    }
+    .comics,
+    .comics:hover{
+        overflow-y: visible;
+        height: auto;
+    }
+}

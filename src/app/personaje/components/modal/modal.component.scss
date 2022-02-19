@@ -1,0 +1,78 @@
+.modal{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+}
+
+.fondo-modal{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background: rgb(0 0 0 / 80%);
+}
+
+.cont-modal{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 92%;
+    max-width: 650px;
+    height: auto;
+    background: #fff;
+    padding: 30px 20px 20px;
+    transform: translate(-50%, -50%);
+}
+
+.cerrar-modal {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    width: 20px;
+    height: 20px;
+}
+
+.info-modal img{
+    width:38%;
+    display:inline-block;
+    vertical-align:top;
+}
+
+.text-modal {
+    width: 59%;
+    display: inline-block;
+    vertical-align: top;
+    margin: 0 0 0 3%;
+}
+
+.text-modal h3 {
+    color: #444;
+    margin:0 0 15px 0;
+}
+
+.text-modal p{
+    font-size: 12px;
+    line-height: 20px;
+    color: #777;
+    margin:0 0 15px 0;
+}
+
+.agregar{
+    background: url(/assets/btn-favourites-default.png) no-repeat 32% 50% / 32px;
+    color: #555;
+    background-color: #ddd;
+    cursor: pointer;
+    text-align: center;
+    padding: 15px;
+    margin: 15px 0 0 0;
+    transition: 0.4s all ease;
+}
+
+.agregar:hover{
+    background-image: url(/assets/btn-favourites-primary.png);
+    background-color: #555;
+    color: #ec1d24;
+}
